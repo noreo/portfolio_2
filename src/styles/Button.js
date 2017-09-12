@@ -9,11 +9,11 @@ padding: 0.25em 1em;
 margin: 0 1em;
 background: transparent;
 color: ${colors.main};
-border: 2px solid ${colors.main};
+border: 2px solid ${colors.black};
 text-decoration: none;
 
 ${props => props.primary && css`
-  background: ${colors.main};
+  background: ${colors.bve_torchred};
   color: white;
 `}
 `;
