@@ -2,7 +2,7 @@ const colors = {
     black: '#050505',
     white: 'White',
     main:  '#050505',
-    deepspace:  '#0D083B',
+    deepspace:  '#080D1D',
     brightturquoise: '#837EB1',
     dimgray: '#6F6F6F',
     adidas_lipstick: '#C0004D',
