@@ -2,11 +2,13 @@ import React from 'react'
 import { withRouter, Switch, Route, Link } from 'react-router-dom'
 import { TransitionGroup, CSSTransition } from 'react-transition-group'
 import Header from './Header'
+import { Flex, Box } from 'grid-styled'
 //import HomePage from './HomePage'
 //import ArticlesPage from './ArticlesPage'
 //import NotFoundPage from './NotFoundPage'
 import Home from './pages/Home'
 import ProjectBrewster from './pages/ProjectBrewster'
+
 
 
 
@@ -55,7 +57,7 @@ const App = ({ location }) => {
   const timeout = { enter: 300, exit: 200 }
   
   return (
-    <section>
+    <Flex align='baseline' justify='space-around'>
     <Header />
       <TransitionGroup component="main" className="page-main">
         <CSSTransition key={currentKey} timeout={timeout} classNames="fade" appear>
@@ -68,7 +70,7 @@ const App = ({ location }) => {
           </section>
         </CSSTransition>
       </TransitionGroup>
-      </section>
+      </Flex>
   )
 }
 
