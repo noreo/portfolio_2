@@ -3,24 +3,10 @@ import colors from './Colors';
 import React from 'react';
 import {withRouter} from 'react-router-dom';
 
-// A simple component that shows the pathname of the current location
-class Child extends React.Component {
-  
-    render() {
-      const { router, params, location, routes } = this.props
-  
-      return (
-        <div style="color:white">{location.pathname}</div>
-      )
-    }
-  }
-  
-  export const Location =  withRouter(Child);
-
 
 
 injectGlobal`
-  html, 
+  html,
   body{ 
     margin: 0;
     padding:0;
@@ -58,15 +44,6 @@ export const Main = styled.main`
   padding: 2em;
 `;
 
-export const Row = styled.div`
-  display: ${props => props.block ? 'block' : 'flex'};
-  flex-wrap: wrap;
-  width: 100%;
-  max-width: 700px;
-  padding: 0 0.5em;
-  margin: 0.5em 0 1.5em;
-  box-sizing: border-box;
-`;
 
 export const Title = styled.h2`
   margin: 0;
