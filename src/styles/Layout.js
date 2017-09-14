@@ -44,15 +44,6 @@ export const Main = styled.main`
   padding: 2em;
 `;
 
-export const Row = styled.div`
-  display: ${props => props.block ? 'block' : 'flex'};
-  flex-wrap: wrap;
-  width: 100%;
-  max-width: 700px;
-  padding: 0 0.5em;
-  margin: 0.5em 0 1.5em;
-  box-sizing: border-box;
-`;
 
 export const Title = styled.h2`
   margin: 0;
