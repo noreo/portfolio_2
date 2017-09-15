@@ -8,13 +8,20 @@ import styled from 'styled-components';
 const Head = styled.header`
   position:fixed;
   width:100%;
+  top:0; left:0;
+`
+
+
+const Container = styled(Box)`
+max-width: 1024px;
+margin-left: auto;
+margin-right: auto;
 `
 
 const Header = ({ children }) => (
   <Head>
-  <Flex width={1 / 2 } wrap
-	align='center'
-	justify='space-around'>
+  <Container is="header">
+      <Flex>
     <Box width={1 / 2} px={2}>
       <Link to='/'>
       <svg width="27px" height="30px">
@@ -42,6 +49,7 @@ const Header = ({ children }) => (
       </nav>
     </Box>
     </Flex>
+    </Container>
   </Head>
 )
 
