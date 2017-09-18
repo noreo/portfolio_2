@@ -3,6 +3,7 @@ import { withRouter, Switch, Route, Link } from 'react-router-dom'
 import { TransitionGroup, CSSTransition } from 'react-transition-group'
 import Header from './Header'
 import { Flex, Box } from 'grid-styled'
+import Layout from "./styles/Layout";
 //import HomePage from './HomePage'
 //import ArticlesPage from './ArticlesPage'
 //import NotFoundPage from './NotFoundPage'
