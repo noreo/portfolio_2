@@ -50,6 +50,9 @@ const Roster = () => (
   </div>
 )
 
+const theme_light = {
+	main: "#fff"
+};
 
 
 const App = ({ location }) => {
@@ -58,7 +61,7 @@ const App = ({ location }) => {
   
   return (
     <Flex align='baseline' justify='space-around'>
-    <Header />
+    <Header/>
       <TransitionGroup component="main" className="page-main">
         <CSSTransition key={currentKey} timeout={timeout} classNames="fade" appear>
           <section className="page-main-inner">
