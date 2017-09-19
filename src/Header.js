@@ -100,17 +100,15 @@ const theme_light = {
 class LogoMin extends React.Component {
     constructor(props){
       super(props);
-      this.state={isHide:false};
+      this.state={isHide:true};
       this.hideBar = this.hideBar.bind(this)
     }
     hideBar(){
        let {isHide} = this.state
-       window.scrollY > this.prev?
+       window.scrollY == 0?
        !isHide && this.setState({isHide:true})
        :
        isHide && this.setState({isHide:false})
-
-       this.prev = window.scrollY;
     }
     componentDidMount(){
         window.addEventListener('scroll',this.hideBar);
@@ -119,16 +117,20 @@ class LogoMin extends React.Component {
          window.removeEventListener('scroll',this.hideBar);
     }
     render(){
-        let attrHide=this.state.isHide?"hide":""
-        return <LogoWarper />;
+       let styleHide=this.state.isHide?{
+        display: 'none',
+      }:{
+        display: 'block',
+      };
+        return(
+        <Link style={styleHide} to='/'>
+            <IconLogo/>
+        </Link>
+        )
+        ;
     }
 }
 
-const LogoWarper = styled('IconLogo')`
-${props => props.hidden && css`
-        display:none;
-    `}
-`
 function IconLogo(props) {
     return (
     <svg width="27px" height="30px">
@@ -188,9 +190,7 @@ const Header = (props) => (
         <Container>
             <Flex>
                 <Box py={2} my={1/2}>
-                    <Link to='/'>
                         <LogoMin />
-                    </Link>
                 </Box>
                 <Box px={2} py={1} ml='auto'>
                     <nav>
