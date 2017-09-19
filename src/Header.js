@@ -80,6 +80,10 @@ const SquareBt = styled.button`
     &:hover{
         border-color:${colors.brightturquoise}
     }
+    ${props => props.noborders && css`
+    @media (max-width: 39.99em) {
+        display:none;
+	}`}
 `; 
 
 SquareBt.defaultProps = {
@@ -93,8 +97,39 @@ const theme_light = {
 	main: colors.bve_torchred
 };
 
+class LogoMin extends React.Component {
+    constructor(props){
+      super(props);
+      this.state={isHide:false};
+      this.hideBar = this.hideBar.bind(this)
+    }
+    hideBar(){
+       let {isHide} = this.state
+       window.scrollY > this.prev?
+       !isHide && this.setState({isHide:true})
+       :
+       isHide && this.setState({isHide:false})
 
-function Logomin(props) {
+       this.prev = window.scrollY;
+    }
+    componentDidMount(){
+        window.addEventListener('scroll',this.hideBar);
+    }
+    componentWillUnmount(){
+         window.removeEventListener('scroll',this.hideBar);
+    }
+    render(){
+        let attrHide=this.state.isHide?"hide":""
+        return <LogoWarper />;
+    }
+}
+
+const LogoWarper = styled('IconLogo')`
+${props => props.hidden && css`
+        display:none;
+    `}
+`
+function IconLogo(props) {
     return (
     <svg width="27px" height="30px">
         <title>logo</title>
@@ -154,7 +189,7 @@ const Header = (props) => (
             <Flex>
                 <Box py={2} my={1/2}>
                     <Link to='/'>
-                        <Logomin />
+                        <LogoMin />
                     </Link>
                 </Box>
                 <Box px={2} py={1} ml='auto'>
